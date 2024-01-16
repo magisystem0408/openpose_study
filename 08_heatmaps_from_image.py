@@ -81,8 +81,7 @@ try:
         heatmap = cv2.applyColorMap(heatmap, cv2.COLORMAP_JET)
         combined = cv2.addWeighted(outputImageF, 0.5, heatmap, 0.5, 0)
         cv2.imshow("OpenPose 1.7.0 - Tutorial Python API", combined)
-        key = cv2.waitKey(-1)
-        if key == 27:
+        if (key := cv2.waitKey(-1)) == 27:
             break
         counter += 1
         counter = counter % num_maps

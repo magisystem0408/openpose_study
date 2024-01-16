@@ -87,8 +87,7 @@ def start_opse():
             
             
             # cv2.imshow("Frame",frame)
-            key = cv2.waitKey(1)
-            if key==27:
+            if (key := cv2.waitKey(1))==27:
                 break
         cap.release()
         cv2.destoryAillWindows()
