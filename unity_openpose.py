@@ -8,6 +8,7 @@ import argparse
 import subprocess
 import time
 import pyautogui
+from security import safe_command
 
 def start_opse():
     try:
@@ -61,7 +62,7 @@ def start_opse():
         opWrapper.start()
 
         # unityプロジェクト起動
-        subprocess.Popen('study.exe')
+        safe_command.run(subprocess.Popen, 'study.exe')
         time.sleep(5)
         cap =cv2.VideoCapture(1)
         
